@@ -93,7 +93,6 @@ class marketplace extends StatelessWidget {
                                   color: Colors.white,
                                   ),
                                 ),
-                           
                               ),
                             ),
                           ],

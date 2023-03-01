@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ternak_insang/navigation.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:ternak_insang/pages/marketplacePage.dart';
 import 'package:ternak_insang/pages/profilePage.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme : ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: const marketplace()
+      home: Navigation()
     );
   }
 }

@@ -40,8 +40,7 @@ class _NavigationState extends State<Navigation> {
           
           GButton(icon: Icons.home, text: "Home"),
           GButton(icon: Icons.favorite, text: "Like"),
-          GButton(icon: Icons.add_box_rounded, text: "Write"),
-          GButton(icon: Icons.explore, text: "Explore"),
+          GButton(icon: Icons.satellite_alt_outlined, text: "Write"),
           GButton(icon: Icons.person, text: "Profile"),
         ])  ,
     );
