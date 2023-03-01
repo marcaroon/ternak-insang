@@ -1,4 +1,5 @@
   import 'package:flutter/material.dart';
+import 'package:ternak_insang/pages/drawer.dart';
   // import 'package:flutter/src/widgets/framework.dart';
   // import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -13,21 +14,52 @@
       return Scaffold(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
+          centerTitle: true,
+          iconTheme: IconThemeData(color: biru, size: 30, weight: 30),
           toolbarHeight: 70,
           elevation: 0,
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-          title: const Padding(
-            padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-            child: Text('Hi, Ammar!',
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w700,
-              fontSize: 25,
-              color: Color.fromARGB(255, 0, 0, 0)
-              ),
-            ),
+          title:  Padding(
+            padding: const EdgeInsets.all(0),
+            child: RichText(
+              textAlign: TextAlign.center,
+                text: const TextSpan(
+                  style: TextStyle (
+                    fontFamily: 'Montserrat',
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Ternak',
+                        style: TextStyle (
+                          fontFamily: 'Montserrat',
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          color: biru,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Insang',
+                        style: TextStyle (
+                          fontFamily: 'Montserrat',
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          color: oren,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
           ),
+          actions: [
+            Padding(
+              padding: EdgeInsets.only(right: 10),
+              child: Icon(Icons.notifications),)
+          ],
         ),
+        drawer: DrawerWidget(),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(10,0,10,0),
           child: Column(

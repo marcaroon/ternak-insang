@@ -21,15 +21,14 @@ class _NavigationState extends State<Navigation> {
     return Scaffold(
       body: widget.pages[widget.currentIndex],
       bottomNavigationBar: GNav(
-          iconSize: 15,
-          gap: 4, 
+          iconSize: 25,
+          gap: 7, 
           backgroundColor: biru,
           color: Colors.white,
           activeColor: oren,
-          tabBorderRadius: 30,
           haptic: true,
           tabBackgroundColor: Colors.transparent,
-          padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 25),
+          padding: const EdgeInsets.all(20),
           onTabChange: (index) {
             setState(() {
               widget.currentIndex = index;
@@ -38,11 +37,40 @@ class _NavigationState extends State<Navigation> {
           selectedIndex: 0,
           tabs: const [
           
-          GButton(icon: Icons.home, text: "Home"),
-          GButton(icon: Icons.favorite, text: "Like"),
-          GButton(icon: Icons.satellite_alt_outlined, text: "Write"),
-          GButton(icon: Icons.person, text: "Profile"),
-        ])  ,
+          GButton(icon: Icons.home, text: "Home",
+          textStyle: TextStyle(
+            fontFamily: 'Montserrat',
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+            color: oren,
+            ),
+          ),
+          GButton(icon: Icons.favorite, text: "Like",
+          textStyle: TextStyle(
+            fontFamily: 'Montserrat',
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+            color: oren,
+            ),
+          ),
+          GButton(icon: Icons.shop_rounded, text: "Write",
+          textStyle: TextStyle(
+            fontFamily: 'Montserrat',
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+            color: oren,
+            ),
+          ),
+          GButton(icon: Icons.person, text: "Profile",
+          textStyle: TextStyle(
+            fontFamily: 'Montserrat',
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+            color: oren,
+            ),
+          ),
+        ]
+      ),
     );
   }
 }
