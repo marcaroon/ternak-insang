@@ -93,6 +93,7 @@ class marketplace extends StatelessWidget {
                                   color: Colors.white,
                                   ),
                                 ),
+                           
                               ),
                             ),
                           ],
@@ -214,7 +215,7 @@ class marketplace extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: Row(
-                            children: [
+                            children: const [
                               isiCategories(),
                               isiCategories(),
                               isiCategories(),
