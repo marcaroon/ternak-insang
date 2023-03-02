@@ -63,7 +63,7 @@ import 'package:ternak_insang/pages/notificationsPage.dart';
                 ),
                 onPressed: (){
                   Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => const notifications(
+                    context, MaterialPageRoute(builder: (context) => const Notifications(
                     )
                   )
                 );
