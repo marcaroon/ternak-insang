@@ -1,5 +1,6 @@
   import 'package:flutter/material.dart';
 import 'package:ternak_insang/pages/drawer.dart';
+import 'package:ternak_insang/pages/notificationsPage.dart';
   // import 'package:flutter/src/widgets/framework.dart';
   // import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -55,11 +56,24 @@ import 'package:ternak_insang/pages/drawer.dart';
           ),
           actions: [
             Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: Icon(Icons.notifications),)
+              padding: const EdgeInsets.all(0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                ),
+                onPressed: (){
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const notifications(
+                    )
+                  )
+                );
+              },
+              child: const Icon(Icons.notifications, color: biru)
+              ),
+            )
           ],
         ),
-        drawer: DrawerWidget(),
+        drawer: const DrawerWidget(),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(10,0,10,0),
           child: Column(
@@ -171,16 +185,19 @@ import 'package:ternak_insang/pages/drawer.dart';
                                   height: 295,
                                   child: ListView(
                                     scrollDirection: Axis.vertical,
-                                    children: const [
-                                      Recommended(),
-                                      Recommended(),
-                                      Recommended(),
-                                      Recommended(),
-                                      Recommended(),
-                                      Recommended(),
-                                      Recommended(),
-                                      Recommended(),
-                                      Recommended(),
+                                    children:  [
+                                      Recommended(image: rekom1, text: title1, subtext: under1),
+                                      Recommended(image: rekom2, text: title2, subtext: under2),
+                                      Recommended(image: rekom3, text: title3, subtext: under3),
+                                      Recommended(image: rekom4, text: title4, subtext: under4),
+                                      Recommended(image: rekom1, text: title1, subtext: under1),
+                                      Recommended(image: rekom2, text: title2, subtext: under2),
+                                      Recommended(image: rekom3, text: title3, subtext: under3),
+                                      Recommended(image: rekom4, text: title4, subtext: under4),
+                                      Recommended(image: rekom1, text: title1, subtext: under1),
+                                      Recommended(image: rekom2, text: title2, subtext: under2),
+                                      Recommended(image: rekom3, text: title3, subtext: under3),
+                                      Recommended(image: rekom4, text: title4, subtext: under4),
                                     ],
                                   ),
                                 )
@@ -365,9 +382,12 @@ class Sale extends StatelessWidget {
   }
 }
 
+
 class Recommended extends StatelessWidget {
-  const Recommended({
-    super.key,
+  final String image, text, subtext;
+
+    Recommended({
+    required this.image, required this.text, required this.subtext,
     });
     
     @override
@@ -383,23 +403,22 @@ class Recommended extends StatelessWidget {
             child:
             Stack(
               children: [
-                const Positioned(
+                Positioned(
                   left: 71,
                   top: 8,
                   child: Align(
                     child: SizedBox(
-                      width: 250,
+                      width: 270,
                       height: 40,
-                      child: Text(
-                        'Human-Made Noise Disrupts Fish Parenting',
-                        textAlign: TextAlign.left,
-                        style: TextStyle (
+                      child: Text(text,
+                      textAlign: TextAlign.left,
+                        style: const TextStyle (
                           fontSize: 13,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w700,
                           color: biru,
                           ),
-                        ),
+                        )
                       ),
                     ),
                   ),
@@ -412,15 +431,14 @@ class Recommended extends StatelessWidget {
                         height: 60,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(7),
-                          child: Image.network(
-                            'https://cdn.the-scientist.com/assets/articleNo/70050/aImg/46165/spiny-chromis-acanthochromis-polyacanthus-800-o.jpg',
-                            fit: BoxFit.cover,
-                            ),
+                          child: Image(
+                            image: AssetImage(image),
+                            fit: BoxFit.cover,)
                           ),
                         ),
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       left: 71,
                       top: 46,
                       child: Align(
@@ -428,8 +446,8 @@ class Recommended extends StatelessWidget {
                           width: 250,
                           height: 12,
                           child: Text(
-                            'Christie Wilcox, PhD | May 23, 2022 | 3 min read',
-                            style: TextStyle (
+                            subtext,
+                            style: const TextStyle (
                               fontSize: 10,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w600,
@@ -507,3 +525,24 @@ class Recommended extends StatelessWidget {
               );
             }
           }
+
+//Gambar Recommended
+String rekom1 = "images/rekom1.jpg";
+String rekom2 = "images/rekom2.jpg";
+String rekom3 = "images/rekom3.jpg";
+String rekom4 = "images/rekom4.jpg";
+
+//Text Title Recommended
+String title1 = "9 Ikan Paling Berbahaya di Dunia, Bisa Menyebabkan Kematian";
+String title2 = "Dosen Unpad: Ini 5 Tips Memilih Ikan Segar";
+String title3 = "Harga Ikan Tongkol Mahal Jadi Penyumpang Tertinggi Inflasi di Aceh";
+String title4 = "Grimsby Town Gemparkan Piala FA, Pasukan Ikan 5 Kali Bunuh Raksasa";
+
+//Text Bawah Title di Recommended
+String under1 = "TREN • 01/03/2023, 22:00 WIB";
+String under2 = "EDUKASI • 01/03/2023, 14:49 WIB";
+String under3 = "REGIONAL • 01/03/2023, 18:13 WIB";
+String under4 = "LIGA INGGRIS • 02/03/2023, 06:00 WIB";
+
+//Gambar Sale
+String sale1 = "";

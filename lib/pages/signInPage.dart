@@ -73,6 +73,9 @@ class signIn extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        TextField(
+                          
+                        ),
                         Container(
                           margin: const EdgeInsets.only(bottom: 35),
                           child: const Text(

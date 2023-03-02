@@ -19,10 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ternak Insang',
-      theme : ThemeData(
-        primarySwatch: Colors.blue
-      ),
-      home: signIn()
+      home: Navigation()
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ternak_insang/pages/homePage.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -22,21 +23,15 @@ class profile extends StatelessWidget {
                       SizedBox(height: 110.0,),
                       CircleAvatar(
                         radius: 65.0,
-                        backgroundImage: AssetImage('assets/erza.jpg'),
+                        backgroundImage: AssetImage('images/ammar.jpg'),
                         backgroundColor: Color.fromARGB(255, 59, 59, 59),
                       ),
                       SizedBox(height: 10.0,),
-                      Text('Erza Scarlet',
+                      Text('Ammar Qorni',
                       style: TextStyle(
                         color:Color.fromARGB(255, 255, 50, 50),
                         fontSize: 20.0,
                       )),
-                      SizedBox(height: 10.0,),
-                      Text('S Class Mage',
-                      style: TextStyle(
-                        color:Color.fromARGB(255, 24, 56, 116),
-                        fontSize: 15.0,
-                      ),)
                   ]
                   ),
                 ),
@@ -45,10 +40,10 @@ class profile extends StatelessWidget {
               Expanded(
                 flex:5,
                 child: Container(
-                  color: Color.fromARGB(255, 183, 219, 19),
+                  color: biru,
                   child: Center(
                       child:Card(
-                          margin: EdgeInsets.fromLTRB(0.0, 45.0, 0.0, 0.0),
+                        margin: EdgeInsets.fromLTRB(0.0, 45.0, 0.0, 0.0),
                         child: Container(
                           width: 310.0,
                           height:290.0,
