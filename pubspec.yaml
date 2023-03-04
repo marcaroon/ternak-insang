@@ -71,6 +71,7 @@ flutter:
     - images/rekom2.jpg
     - images/rekom3.jpg
     - images/rekom4.jpg
+    - images/bg-profile.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

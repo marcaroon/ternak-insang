@@ -148,16 +148,16 @@ import 'package:ternak_insang/pages/notificationsPage.dart';
                         width: double.infinity,
                         height: 350,
                         decoration: BoxDecoration(
-                        color: biru,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Color(0x3f000000),
-                            offset: Offset(0, 4),
-                            blurRadius: 2,
-                            ),
-                          ]
-                        ),
+                          color: biru,
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0x3f000000),
+                              offset: Offset(0, 4),
+                              blurRadius: 2,
+                              ),
+                            ]
+                          ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -239,36 +239,36 @@ import 'package:ternak_insang/pages/notificationsPage.dart';
                                 ),
                               ),
                               Container(
-                              margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                              padding: const EdgeInsets.fromLTRB(12, 5, 12, 5),
-                              width: double.infinity,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                color: biru,
-                                borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: const Text(
-                                  'You may like',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle (
-                                    fontSize: 15,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white,
+                                margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                padding: const EdgeInsets.fromLTRB(12, 5, 12, 5),
+                                width: double.infinity,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                  color: biru,
+                                  borderRadius: BorderRadius.circular(10)
+                                  ),
+                                  child: const Text(
+                                    'You may like',
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle (
+                                      fontSize: 15,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: double.infinity,
-                                  height: 250,
-                                  child: ListView(
-                                    scrollDirection: Axis.horizontal,
-                                    children: const [
-                                      Sale(),
-                                      Sale(),
-                                      Sale(),
-                                      Sale(),
-                                      Sale(),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    height: 250,
+                                    child: ListView(
+                                      scrollDirection: Axis.horizontal,
+                                      children: const [
+                                        Sale(),
+                                        Sale(),
+                                        Sale(),
+                                        Sale(),
+                                        Sale(),
                                   ],
                                 ),
                               )

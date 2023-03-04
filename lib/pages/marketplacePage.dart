@@ -255,7 +255,73 @@ class marketplace extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(7, 10, 7, 10),
+                    padding: const EdgeInsets.fromLTRB(12, 5, 12, 5),
+                    width: double.infinity,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: biru,
+                      borderRadius: BorderRadius.circular(10)),
+                      child: const Text(
+                        'You may like',
+                        textAlign: TextAlign.left,
+                        style: TextStyle (
+                          fontSize: 15,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 250,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: const [
+                            Sale(),
+                            Sale(),
+                            Sale(),
+                            Sale(),
+                            Sale(),
+                            ],
+                          ),
+                        ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(7, 10, 7, 10),
+                    padding: const EdgeInsets.fromLTRB(12, 5, 12, 5),
+                    width: double.infinity,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: biru,
+                      borderRadius: BorderRadius.circular(10)),
+                      child: const Text(
+                        'Koi Sales',
+                        textAlign: TextAlign.left,
+                        style: TextStyle (
+                          fontSize: 15,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 250,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: const [
+                            Sale(),
+                            Sale(),
+                            Sale(),
+                            Sale(),
+                            Sale(),
+                            ],
+                          ),
+                        ),
                 ],
               )
             )
@@ -285,14 +351,14 @@ class bawahCategories extends StatelessWidget {
               borderRadius: BorderRadius.circular(20)
             ),
             child: const Center(
-            child: Text(
-              'Contoh',
-              style: TextStyle(
-                  fontSize: 13,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w600),
-          ),
-        ),
+              child: Text(
+                'Contoh',
+                style: TextStyle(
+                    fontSize: 13,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w600),
+                    ),
+                  ),
       ),
     );
   }
