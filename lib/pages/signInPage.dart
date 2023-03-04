@@ -16,40 +16,43 @@ class signIn extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(0),
           child:
-          ListView(
+          Column(
             children: [
-              Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.only(top: 440),
-                child: RichText(
-                textAlign: TextAlign.center,
-                text: const TextSpan(
-                  style: TextStyle (
-                    fontFamily: 'Montserrat',
-                    fontSize: 32,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
+              Padding(
+                padding: const EdgeInsets.only(top: 400),
+                child: Container(
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.only(top: 20),
+                  child: RichText(
+                  textAlign: TextAlign.center,
+                  text: const TextSpan(
+                    style: TextStyle (
+                      fontFamily: 'Montserrat',
+                      fontSize: 32,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'Ternak',
+                          style: TextStyle (
+                            fontFamily: 'Montserrat',
+                            fontSize: 32,
+                            fontWeight: FontWeight.w700,
+                            color: biru,
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'Insang',
+                          style: TextStyle (
+                            fontFamily: 'Montserrat',
+                            fontSize: 32,
+                            fontWeight: FontWeight.w700,
+                            color: oren,
+                          ),
+                        ),
+                      ],
                     ),
-                    children: [
-                      TextSpan(
-                        text: 'Ternak',
-                        style: TextStyle (
-                          fontFamily: 'Montserrat',
-                          fontSize: 32,
-                          fontWeight: FontWeight.w700,
-                          color: biru,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Insang',
-                        style: TextStyle (
-                          fontFamily: 'Montserrat',
-                          fontSize: 32,
-                          fontWeight: FontWeight.w700,
-                          color: oren,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ),
@@ -73,9 +76,6 @@ class signIn extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        TextField(
-                          
-                        ),
                         Container(
                           margin: const EdgeInsets.only(bottom: 35),
                           child: const Text(

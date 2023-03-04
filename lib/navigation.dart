@@ -53,7 +53,7 @@ class _NavigationState extends State<Navigation> {
             color: oren,
             ),
           ),
-          GButton(icon: Icons.shop_rounded, text: "Write",
+          GButton(icon: Icons.shop_rounded, text: "Marketplace",
           textStyle: TextStyle(
             fontFamily: 'Montserrat',
             fontSize: 15,

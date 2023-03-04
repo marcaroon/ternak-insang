@@ -24,8 +24,7 @@ class Notifications extends StatelessWidget {
               color: biru),
         ),
       ),
-      body: ListView(
-        scrollDirection: Axis.horizontal,
+      body: Column(
         children: [
           Column(
             children: [
@@ -37,12 +36,10 @@ class Notifications extends StatelessWidget {
                   ListSrollHorizontalAtas(text: not4,),
                 ],
               ),
-              Container(
-                child: Row(
-                  children: [
-                    Text('HAHAHAHAHAHAHAHAHAHAHAHAHAHAHA')
-                  ],
-                ),
+              Row(
+                children: const [
+                  Text('HAHAHAHAHAHAHAHAHAHAHAHAHAHAHA')
+                ],
               )
             ],
           ),
@@ -70,7 +67,7 @@ class ListSrollHorizontalAtas extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 13,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w600),

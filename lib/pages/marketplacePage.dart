@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ternak_insang/pages/homePage.dart';
+import 'package:ternak_insang/pages/favoritePage.dart';
 
 class marketplace extends StatelessWidget {
   const marketplace({super.key});
@@ -51,7 +52,7 @@ class marketplace extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(0),
+        padding: const EdgeInsets.all(0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -201,7 +202,7 @@ class marketplace extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:  [
                         const Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
                           child: Text('Categories',
                           style: TextStyle(
                             fontFamily: 'Montserrat',
@@ -211,25 +212,88 @@ class marketplace extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                          child: Row(
-                            children: const [
-                              isiCategories(),
-                              isiCategories(),
-                              isiCategories(),
-                            ],
+                        Flexible(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Row(
+                                  children: const [
+                                    isiCategories(),
+                                    isiCategories(),
+                                    isiCategories(),
+                                    isiCategories(),
+                                    isiCategories(),
+                                    isiCategories(),
+                                    isiCategories(),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         )
                       ],
                     ),
                   ),
+                  Container(
+                    height: 50,
+                    width: double.infinity,
+                    color: Colors.blue[50],
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Row(
+                          children: const [
+                            bawahCategories(),
+                            bawahCategories(),
+                            bawahCategories(),
+                            bawahCategories(),
+                            bawahCategories(),
+                            bawahCategories(),
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               )
             )
           ],
         ),
       )
+    );
+  }
+}
+
+class bawahCategories extends StatelessWidget {
+  const bawahCategories({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 5),
+      child: Container(
+        margin: const EdgeInsets.only(right: 5),
+        height: 30,
+        width: 110,
+        decoration:
+            BoxDecoration(
+              color: oren,
+              borderRadius: BorderRadius.circular(20)
+            ),
+            child: const Center(
+            child: Text(
+              'Contoh',
+              style: TextStyle(
+                  fontSize: 13,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w600),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -254,7 +318,7 @@ class isiCategories extends StatelessWidget {
         children: [
           Container(
             height: 45,
-            margin: EdgeInsets.fromLTRB(10, 10, 10, 7),
+            margin: const EdgeInsets.fromLTRB(10, 10, 10, 7),
             child: ClipRRect(
               child: Image.asset('images/pakanikan.png'),
             ),

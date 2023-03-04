@@ -16,13 +16,13 @@ class signUp extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(0),
           child:
-          ListView(
+          Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 150),
+                padding: const EdgeInsets.only(bottom: 200),
                 child: Container(
                   alignment: Alignment.center,
-                  padding: const EdgeInsets.only(top: 290),
+                  padding: const EdgeInsets.only(top: 331),
                   child: RichText(
                   textAlign: TextAlign.center,
                   text: const TextSpan(
