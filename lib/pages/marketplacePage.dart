@@ -13,7 +13,6 @@ class marketplace extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: biru,
-        elevation: 0,
         title: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -280,15 +279,17 @@ class marketplace extends StatelessWidget {
                         height: 250,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
-                          children: const [
-                            Sale(),
-                            Sale(),
-                            Sale(),
-                            Sale(),
-                            Sale(),
-                            ],
-                          ),
+                          children:  [
+                            InkWell(
+                              child: Sale(),
+                              onTap: (){
+                                Navigator.push(
+                                  context, MaterialPageRoute(builder: (context) => const Favorite()));
+                              },
+                            ),
+                          ],
                         ),
+                      ),
                   Container(
                     margin: const EdgeInsets.fromLTRB(7, 10, 7, 10),
                     padding: const EdgeInsets.fromLTRB(12, 5, 12, 5),

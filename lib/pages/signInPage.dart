@@ -19,7 +19,7 @@ class signIn extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 400),
+                padding: const EdgeInsets.only(top: 200),
                 child: Container(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.only(top: 20),

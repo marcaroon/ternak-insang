@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ternak_insang/pages/homePage.dart';
+import 'package:ternak_insang/pages/loginPage.dart';
 import 'package:ternak_insang/pages/profilePage.dart';
 import 'package:ternak_insang/pages/signInPage.dart';
 
@@ -51,30 +52,66 @@ class DrawerWidget extends StatelessWidget {
               text: 'Log Out',
               onTap: () {
                 showDialog(
-                  context: context, 
-                  builder: (context) {
-                    return AlertDialog(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0))),
-                      backgroundColor: Color.fromARGB(255, 34, 34, 34),
-                      title: const Text("Sign Out", style: TextStyle(color: Colors.white),),
-                      content: const Text("Are you sure you want to log out?", style: TextStyle(color: Colors.white),),
-                      actions: [
-                        TextButton(onPressed: (){
-                          Navigator.pop(context);
-                        }, child: const Text("Cancel", style: TextStyle(color: oren, fontWeight: FontWeight.bold),),
-                        ),
-                        TextButton(onPressed: (){
-                          Navigator.of(context).popUntil((route) => route.isFirst);
-                          Navigator.pushReplacement(
-                          context, MaterialPageRoute(builder: (BuildContext context) => signIn()));
-                        }, child: const Text("Confirm", style: TextStyle(color: oren, fontWeight: FontWeight.bold),),
-                        ),
-                      
-                      ],
-                    );
-                  }
-                  );
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(15.0))),
+                                      backgroundColor: Colors.white,
+                                      title: const Text(
+                                        'Log Out',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontFamily: 'Montserrat',
+                                            fontWeight: FontWeight.w600,
+                                            color: biru),
+                                      ),
+                                      content: const Text(
+                                        'Are you sure want to log out?',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Montserrat',
+                                            fontWeight: FontWeight.w500,
+                                            color: biru),
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text(
+                                            'Cancel',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontFamily: 'Montserrat',
+                                                fontWeight: FontWeight.w600,
+                                                color: oren),
+                                          ),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).popUntil(
+                                                (route) => route.isFirst);
+                                            Navigator.pushReplacement(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (BuildContext
+                                                            context) =>
+                                                        SignIn()));
+                                          },
+                                          child: const Text(
+                                            'Confirm',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontFamily: 'Montserrat',
+                                                fontWeight: FontWeight.w600,
+                                                color: oren),
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  });
               },),
           ],
         ),

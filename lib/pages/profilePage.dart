@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:ternak_insang/pages/loginPage.dart';
 import 'package:ternak_insang/pages/signInPage.dart';
 
 class profile extends StatelessWidget {
@@ -120,7 +121,7 @@ class profile extends StatelessWidget {
                                                 MaterialPageRoute(
                                                     builder: (BuildContext
                                                             context) =>
-                                                        signIn()));
+                                                        SignIn()));
                                           },
                                           child: const Text(
                                             'Confirm',
@@ -159,7 +160,7 @@ class profile extends StatelessWidget {
             child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index) {
-                  return ListTile(
+                  return const ListTile(
                     leading: CircleAvatar(),
                     title: Text(
                       'Kelompok 1 Niken Pat Ammar Daus',
