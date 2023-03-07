@@ -21,7 +21,7 @@ class profile extends StatelessWidget {
               ),
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 30),
+                  padding: const EdgeInsets.only(top: 40),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -153,27 +153,61 @@ class profile extends StatelessWidget {
                     ],
                   ),
                 ),
-              )),
-          Container(
-            height: 100,
-            color: oren,
-            child: ListView.builder(
-                itemCount: 100,
-                itemBuilder: (context, index) {
-                  return const ListTile(
-                    leading: CircleAvatar(),
-                    title: Text(
-                      'Kelompok 1 Niken Pat Ammar Daus',
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w600,
-                        color: biru),
+              )
+            ),
+            const DefaultTabController(
+              length: 3,
+              child: TabBar(
+                indicatorColor: oren,
+                tabs: <Widget>[
+                  Tab(
+                    child: Text('Likes',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w600,
+                      color: biru),
+                      ),
                     ),
-                  );
-                }
+                  Tab(
+                    child: Text('Address',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w600,
+                      color: biru),
+                      ),
+                  ),
+                  Tab(
+                    child: Text('History',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w600,
+                      color: biru),
+                      ),
+                  ),
+              ],
+            )
+          ),
+          TabBarView(
+            children: <Widget>[
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.yellow,
               ),
-          )
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.yellow,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.yellow,
+              ),
+            ])
         ],
       ),
     );

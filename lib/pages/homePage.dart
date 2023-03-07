@@ -111,7 +111,7 @@ import 'package:ternak_insang/navigation.dart';
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: const Text(
-                              'Categories',
+                              'Kategori',
                               textAlign: TextAlign.left,
                               style: TextStyle (
                                 fontSize: 13,
@@ -171,7 +171,7 @@ import 'package:ternak_insang/navigation.dart';
                                   borderRadius: BorderRadius.circular(10)
                                 ),
                                 child: const Text(
-                                  'Recommended',
+                                  'Rekomendasi',
                                   textAlign: TextAlign.left,
                                   style: TextStyle (
                                     fontSize: 13,
@@ -236,6 +236,7 @@ import 'package:ternak_insang/navigation.dart';
                                     Sale(),
                                     Sale(),
                                     Sale(),
+                                    Sale(),
                                   ],
                                 ),
                               ),
@@ -290,98 +291,107 @@ class Sale extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.fromLTRB(0, 0, 10, 0),
-      width: 150,
-      height: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: oren,
-          width: 2
-        ),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x3f000000),
-            offset: Offset(1, 4),
-            blurRadius: 5
-          )
-        ]
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: const EdgeInsets.only(bottom: 5),
-            width: 130,
-            height: 100,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ojiya_Nishikigoi_no_Sato_ac_%283%29.jpg/300px-Ojiya_Nishikigoi_no_Sato_ac_%283%29.jpg',
-              fit: BoxFit.fill),
-            ),
+    return InkWell(
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+        width: 150,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(
+            color: oren,
+            width: 2
           ),
-          Container(
-            margin: const EdgeInsets.all(7),
-            child: const Text(
-            'Koi Utsuri',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w700,
-              color: biru
-              ),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x3f000000),
+              offset: Offset(1, 4),
+              blurRadius: 5
             )
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-            margin: const EdgeInsets.fromLTRB(10, 5, 10, 10),
-            child: const Text(
-              'Rp. 325.000',
-              style: TextStyle(
-                fontSize: 14,
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w600,
-                color: oren
+          ]
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              margin: const EdgeInsets.only(bottom: 5),
+              width: 130,
+              height: 100,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ojiya_Nishikigoi_no_Sato_ac_%283%29.jpg/300px-Ojiya_Nishikigoi_no_Sato_ac_%283%29.jpg',
+                fit: BoxFit.fill),
               ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: oren,
-              borderRadius: BorderRadius.circular(10)
+            Container(
+              margin: const EdgeInsets.all(7),
+              child: const Text(
+              'Koi Utsuri',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 17,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w700,
+                color: biru
+                ),
+              )
             ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  margin: const EdgeInsets.all(6),
-                  padding: const EdgeInsets.fromLTRB(9, 0, 9, 0),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Add to cart',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 12.5,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+              margin: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+              child: const Text(
+                'Rp. 325.000',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w600,
+                  color: oren
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: oren,
+                borderRadius: BorderRadius.circular(10)
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.fromLTRB(9, 0, 9, 0),
+                    alignment: Alignment.center,
+                    child: const Center(
+                      child: Text(
+                        'Add to cart',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 12.5,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white
+                        ),
+                      ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+      onTap: (){
+        Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const Home()));
+      },
     );
   }
 }
+
 
 
 class Recommended extends StatelessWidget {
@@ -509,7 +519,7 @@ class Recommended extends StatelessWidget {
                             ),
                           ),
                           const Text(
-                            'Fish Feed',
+                            'Pakan Ikan',
                             style: TextStyle (
                               fontSize: 10,
                               fontWeight: FontWeight.w700,

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ternak Insang',
-      home: Navigation()
+      home: profile()
     );
   }
 }
