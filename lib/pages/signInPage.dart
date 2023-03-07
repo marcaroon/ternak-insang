@@ -106,7 +106,7 @@ class signIn extends StatelessWidget {
                           ),
                           child: const Center(
                             child: Text(
-                              'Full Name',
+                              'E-Mail',
                               textAlign: TextAlign.center,
                               style: TextStyle (
                                 fontFamily: 'Montserrat',

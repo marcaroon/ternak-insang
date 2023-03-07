@@ -60,14 +60,14 @@ import 'package:ternak_insang/navigation.dart';
               padding: const EdgeInsets.all(0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
+                  backgroundColor: Colors.white,
                 ),
                 onPressed: (){
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => const Notifications(
-                    )
-                  )
-                );
+                //   Navigator.push(
+                //     context, MaterialPageRoute(builder: (context) => const Notifications(
+                //     )
+                //   )
+                // );
               },
               child: const Icon(Icons.notifications, color: biru)
               ),

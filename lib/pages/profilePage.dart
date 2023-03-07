@@ -190,24 +190,24 @@ class profile extends StatelessWidget {
               ],
             )
           ),
-          TabBarView(
-            children: <Widget>[
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.yellow,
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.yellow,
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.yellow,
-              ),
-            ])
+          // TabBarView(
+          //   children: <Widget>[
+          //     Container(
+          //       height: 200,
+          //       width: 200,
+          //       color: Colors.yellow,
+          //     ),
+          //     Container(
+          //       height: 200,
+          //       width: 200,
+          //       color: Colors.yellow,
+          //     ),
+          //     Container(
+          //       height: 200,
+          //       width: 200,
+          //       color: Colors.yellow,
+          //     ),
+          //   ])
         ],
       ),
     );

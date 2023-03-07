@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:ternak_insang/pages/favoritePage.dart';
+import 'package:ternak_insang/pages/salePage.dart';
 
 class marketplace extends StatelessWidget {
   const marketplace({super.key});
@@ -284,7 +285,7 @@ class marketplace extends StatelessWidget {
                               child: Sale(),
                               onTap: (){
                                 Navigator.push(
-                                  context, MaterialPageRoute(builder: (context) => const Favorite()));
+                                  context, MaterialPageRoute(builder: (context) => const Sales()));
                               },
                             ),
                           ],
