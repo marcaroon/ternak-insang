@@ -9,6 +9,7 @@ class Favorite extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 80,
         backgroundColor: Colors.white,
         elevation: 0,

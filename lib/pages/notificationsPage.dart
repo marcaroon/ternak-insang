@@ -24,27 +24,29 @@ class Notifications extends StatelessWidget {
               color: biru),
         ),
       ),
-      body: Column(
-        children: [
-          Column(
-            children: [
-              Row(
+      body: Padding(
+        padding: const EdgeInsets.all(0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Flexible(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
                 children: [
-                  ListSrollHorizontalAtas(text: not1,),
-                  ListSrollHorizontalAtas(text: not2,),
-                  ListSrollHorizontalAtas(text: not3,),
-                  ListSrollHorizontalAtas(text: not4,),
+                  Row(
+                    children: [
+                      ListSrollHorizontalAtas(text: not1),
+                      ListSrollHorizontalAtas(text: not2),
+                      ListSrollHorizontalAtas(text: not3),
+                      ListSrollHorizontalAtas(text: not4)
+                    ],
+                  )
                 ],
               ),
-              Row(
-                children: const [
-                  Text('HAHAHAHAHAHAHAHAHAHAHAHAHAHAHA')
-                ],
-              )
-            ],
-          ),
-        ],
-      ),
+            )
+          ],
+        ),
+      )
     );
   }
 }

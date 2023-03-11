@@ -4,6 +4,7 @@ import 'package:ternak_insang/pages/favoritePage.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:ternak_insang/pages/loginPage.dart';
 import 'package:ternak_insang/pages/marketplacePage.dart';
+import 'package:ternak_insang/pages/notificationsPage.dart';
 import 'package:ternak_insang/pages/profilePage.dart';
 import 'package:ternak_insang/pages/signInPage.dart';
 import 'package:ternak_insang/pages/signupPage.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ternak Insang',
-      home: signUp()
+      home: SignIn()
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ternak_insang/pages/homePage.dart';
+import 'package:ternak_insang/navigation.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -144,7 +145,7 @@ class SignIn extends StatelessWidget {
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
-                            context, MaterialPageRoute(builder: (_) => Home()));
+                            context, MaterialPageRoute(builder: (_) => Navigation()));
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ternak_insang/pages/homePage.dart';
-import 'package:ternak_insang/pages/favoritePage.dart';
 import 'package:ternak_insang/pages/salePage.dart';
 
 class marketplace extends StatelessWidget {
@@ -12,6 +11,7 @@ class marketplace extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold (
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 80,
         backgroundColor: biru,
         title: Padding(
