@@ -161,7 +161,7 @@ class profile extends StatelessWidget {
                 indicatorColor: oren,
                 tabs: <Widget>[
                   Tab(
-                    child: Text('Likes',
+                    child: Text('Favorit',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Montserrat',
@@ -170,7 +170,7 @@ class profile extends StatelessWidget {
                       ),
                     ),
                   Tab(
-                    child: Text('Address',
+                    child: Text('Alamat',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Montserrat',
@@ -179,7 +179,7 @@ class profile extends StatelessWidget {
                       ),
                   ),
                   Tab(
-                    child: Text('History',
+                    child: Text('Riwayat',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Montserrat',

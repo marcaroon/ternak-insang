@@ -36,8 +36,7 @@ class _NavigationState extends State<Navigation> {
           },
           selectedIndex: 0,
           tabs: const [
-          
-          GButton(icon: Icons.home, text: "Home",
+          GButton(icon: Icons.home, text: "Beranda",
           textStyle: TextStyle(
             fontFamily: 'Montserrat',
             fontSize: 15,
@@ -45,7 +44,7 @@ class _NavigationState extends State<Navigation> {
             color: oren,
             ),
           ),
-          GButton(icon: Icons.favorite, text: "Like",
+          GButton(icon: Icons.favorite, text: "Favorit",
           textStyle: TextStyle(
             fontFamily: 'Montserrat',
             fontSize: 15,
@@ -53,7 +52,7 @@ class _NavigationState extends State<Navigation> {
             color: oren,
             ),
           ),
-          GButton(icon: Icons.shop_rounded, text: "Marketplace",
+          GButton(icon: Icons.shop_rounded, text: "Beli",
           textStyle: TextStyle(
             fontFamily: 'Montserrat',
             fontSize: 15,
@@ -61,7 +60,7 @@ class _NavigationState extends State<Navigation> {
             color: oren,
             ),
           ),
-          GButton(icon: Icons.person, text: "Profile",
+          GButton(icon: Icons.person, text: "Profil",
           textStyle: TextStyle(
             fontFamily: 'Montserrat',
             fontSize: 15,

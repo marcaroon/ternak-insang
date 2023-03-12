@@ -59,7 +59,7 @@ class Home extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(0),
+            padding: const EdgeInsets.only(right: 7),
             child: IconButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -351,7 +351,7 @@ class Sale extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(0),
               child: IconButton(
                   color: Colors.red,
                   iconSize: 30,
@@ -388,14 +388,14 @@ class Recommended extends StatelessWidget {
       child: Container(
         height: 70,
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(10)),
-        child: Stack(
-          children: [
-            Positioned(
-              left: 71,
-              top: 8,
-              child: Align(
-                child: SizedBox(
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+          child: Stack(
+            children: [
+              Positioned(
+                left: 71,
+                top: 8,
+                child: Align(
+                  child: SizedBox(
                     width: 270,
                     height: 40,
                     child: Text(
@@ -407,7 +407,8 @@ class Recommended extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                         color: biru,
                       ),
-                    )),
+                    )
+                  ),
               ),
             ),
             Positioned(

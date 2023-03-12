@@ -3,61 +3,66 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:ternak_insang/pages/salePage.dart';
+import 'package:ternak_insang/pages/cart.dart';
 
 class marketplace extends StatelessWidget {
   const marketplace({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 80,
-        backgroundColor: biru,
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Container(
-                width: 300,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.white,
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.fromLTRB(25, 9, 0, 10),
-                  child: Text(
-                    'Search',
-                    style: TextStyle(
-                      color: Color.fromRGBO(297, 297, 297, 100),
-                      fontFamily: 'Montserrat',
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600
+    return Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          toolbarHeight: 80,
+          backgroundColor: biru,
+          title: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Container(
+                  width: 300,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.fromLTRB(25, 9, 0, 10),
+                    child: Text(
+                      'Search',
+                      style: TextStyle(
+                          color: Color.fromRGBO(297, 297, 297, 100),
+                          fontFamily: 'Montserrat',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                 ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(left: 20),
-                height: 40,
-                child: ClipRRect(
-                  child: Image.asset(
-                    'images/basket3.png'
-                  ),
-                ),
-              )
-            ],
+                InkWell(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 20),
+                      height: 40,
+                      child: ClipRRect(
+                        child: Image.asset('images/basket3.png'),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Cart()));
+                    })
+              ],
+            ),
           ),
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Flexible(
-              child: ListView(
+        body: Padding(
+          padding: const EdgeInsets.all(0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Flexible(
+                child: ListView(
                 scrollDirection: Axis.vertical,
                 children: [
                   Container(
@@ -86,12 +91,13 @@ class marketplace extends StatelessWidget {
                               width: 300,
                               child: const Padding(
                                 padding: EdgeInsets.fromLTRB(10, 7, 10, 10),
-                                child: Text('Contoh headline yang ada di marketplace, ini contoh panjangnya',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
+                                child: Text(
+                                  'Contoh headline yang ada di marketplace, ini contoh panjangnya',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -117,12 +123,13 @@ class marketplace extends StatelessWidget {
                               width: 300,
                               child: const Padding(
                                 padding: EdgeInsets.fromLTRB(10, 7, 10, 10),
-                                child: Text('Contoh headline yang ada di marketplace, ini contoh panjangnya',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
+                                child: Text(
+                                  'Contoh headline yang ada di marketplace, ini contoh panjangnya',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -148,12 +155,13 @@ class marketplace extends StatelessWidget {
                               width: 300,
                               child: const Padding(
                                 padding: EdgeInsets.fromLTRB(10, 7, 10, 10),
-                                child: Text('Contoh headline yang ada di marketplace, ini contoh panjangnya',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
+                                child: Text(
+                                  'Contoh headline yang ada di marketplace, ini contoh panjangnya',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -179,12 +187,13 @@ class marketplace extends StatelessWidget {
                               width: 300,
                               child: const Padding(
                                 padding: EdgeInsets.fromLTRB(10, 7, 10, 10),
-                                child: Text('Contoh headline yang ada di marketplace, ini contoh panjangnya',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
+                                child: Text(
+                                  'Contoh headline yang ada di marketplace, ini contoh panjangnya',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -200,16 +209,16 @@ class marketplace extends StatelessWidget {
                     color: biru,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:  [
+                      children: [
                         const Padding(
                           padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                          child: Text('Categories',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white
-                            ),
+                          child: Text(
+                            'Categories',
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
                           ),
                         ),
                         Flexible(
@@ -244,13 +253,11 @@ class marketplace extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       children: [
                         Row(
-                          children: const [
-                            bawahCategories(),
-                            bawahCategories(),
-                            bawahCategories(),
-                            bawahCategories(),
-                            bawahCategories(),
-                            bawahCategories(),
+                          children: [
+                            bawahCategories(text: horList1),
+                            bawahCategories(text: horList2),
+                            bawahCategories(text: horList3),
+                            bawahCategories(text: horList4),
                           ],
                         ),
                       ],
@@ -262,106 +269,108 @@ class marketplace extends StatelessWidget {
                     width: double.infinity,
                     height: 30,
                     decoration: BoxDecoration(
-                      color: biru,
-                      borderRadius: BorderRadius.circular(10)),
-                      child: const Text(
-                        'You may like',
-                        textAlign: TextAlign.left,
-                        style: TextStyle (
-                          fontSize: 15,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          ),
-                        ),
+                        color: biru, borderRadius: BorderRadius.circular(10)),
+                    child: const Text(
+                      'You may like',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
                       ),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 250,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children:  [
-                            InkWell(
-                              child: Sale(),
-                              onTap: (){
-                                Navigator.push(
-                                  context, MaterialPageRoute(builder: (context) => const Sales()));
-                              },
-                            ),
-                          ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 250,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        InkWell(
+                          child: Sale(),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Sales()));
+                          },
                         ),
-                      ),
+                      ],
+                    ),
+                  ),
                   Container(
                     margin: const EdgeInsets.fromLTRB(7, 10, 7, 10),
                     padding: const EdgeInsets.fromLTRB(12, 5, 12, 5),
                     width: double.infinity,
                     height: 30,
                     decoration: BoxDecoration(
-                      color: biru,
-                      borderRadius: BorderRadius.circular(10)),
-                      child: const Text(
-                        'Koi Sales',
-                        textAlign: TextAlign.left,
-                        style: TextStyle (
-                          fontSize: 15,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          ),
-                        ),
+                        color: biru, borderRadius: BorderRadius.circular(10)),
+                    child: const Text(
+                      'Koi Sales',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
                       ),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 250,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: const [
-                            Sale(),
-                            Sale(),
-                            Sale(),
-                            Sale(),
-                            Sale(),
-                            ],
-                          ),
-                        ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 250,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        Sale(),
+                        Sale(),
+                        Sale(),
+                        Sale(),
+                        Sale(),
+                      ],
+                    ),
+                  ),
                 ],
-              )
-            )
-          ],
-        ),
-      )
-    );
+              ))
+            ],
+          ),
+        ));
   }
 }
 
 class bawahCategories extends StatelessWidget {
-  const bawahCategories({
+  final String text;
+  bawahCategories({
     super.key,
+    required this.text,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 5),
-      child: Container(
-        margin: const EdgeInsets.only(right: 5),
-        height: 30,
-        width: 110,
-        decoration:
-            BoxDecoration(
-              color: oren,
-              borderRadius: BorderRadius.circular(20)
-            ),
-            child: const Center(
+      child: InkWell(
+          child: Container(
+            margin: const EdgeInsets.only(right: 5),
+            height: 30,
+            width: 110,
+            decoration: BoxDecoration(
+                color: oren, borderRadius: BorderRadius.circular(20)),
+            child: Center(
               child: Text(
-                'Contoh',
-                style: TextStyle(
+                text,
+                style: const TextStyle(
                     fontSize: 13,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w600),
-                    ),
-                  ),
-      ),
+              ),
+            ),
+          ),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const Sales()));
+          }),
     );
   }
 }
@@ -378,9 +387,7 @@ class isiCategories extends StatelessWidget {
       height: 85,
       width: 70,
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(5)
-      ),
+          color: Colors.white, borderRadius: BorderRadius.circular(5)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -394,14 +401,18 @@ class isiCategories extends StatelessWidget {
           const Text(
             'Pakan Ikan',
             style: TextStyle(
-              fontSize: 10,
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w700,
-              color: oren
-            ),
+                fontSize: 10,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w700,
+                color: oren),
           )
         ],
       ),
     );
   }
 }
+
+String horList1 = "Terlaris";
+String horList2 = "Terbaru";
+String horList3 = "Termurah";
+String horList4 = "Termahal";
