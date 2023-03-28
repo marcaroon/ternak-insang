@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:ternak_insang/object.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:ternak_insang/pages/salePage.dart';
 import 'package:ternak_insang/pages/cart.dart';
@@ -20,6 +21,7 @@ class marketplace extends StatelessWidget {
             child: Row(
               children: [
                 Container(
+                  margin: EdgeInsets.only(right: 15),
                   width: 300,
                   height: 40,
                   decoration: BoxDecoration(
@@ -38,20 +40,26 @@ class marketplace extends StatelessWidget {
                     ),
                   ),
                 ),
-                InkWell(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 20),
-                      height: 40,
-                      child: ClipRRect(
-                        child: Image.asset('images/basket3.png'),
-                      ),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Cart()));
-                    })
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+                  },
+                  icon: const Icon(Icons.trolley),
+                  iconSize: 30,)
+                // InkWell(
+                //     child: Container(
+                //       margin: const EdgeInsets.only(left: 20),
+                //       height: 40,
+                //       child: ClipRRect(
+                //         child: Image.asset('images/basket3.png'),
+                //       ),
+                //     ),
+                //     onTap: () {
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => const Cart()));
+                //     })
               ],
             ),
           ),
@@ -287,15 +295,12 @@ class marketplace extends StatelessWidget {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        InkWell(
-                          child: Sale(),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Sales()));
-                          },
-                        ),
+                        Sale(image: koi1, text: namaKoi1),
+                        Sale(image: koi2, text: namaKoi2),
+                        Sale(image: koi3, text: namaKoi3),
+                        Sale(image: koi4, text: namaKoi4),
+                        Sale(image: koi5, text: namaKoi5),
+                        Sale(image: koi6, text: namaKoi6),
                       ],
                     ),
                   ),
@@ -322,12 +327,12 @@ class marketplace extends StatelessWidget {
                     height: 250,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
-                      children: const [
-                        Sale(),
-                        Sale(),
-                        Sale(),
-                        Sale(),
-                        Sale(),
+                      children: [
+                        Sale(image: koi7, text: namaKoi7),
+                        Sale(image: koi8, text: namaKoi8),
+                        Sale(image: koi9, text: namaKoi9),
+                        Sale(image: koi10, text: namaKoi10),
+                        Sale(image: koi11, text: namaKoi11),
                       ],
                     ),
                   ),

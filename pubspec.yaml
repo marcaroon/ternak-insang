@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  quantity_input: ^1.0.2
   google_nav_bar: ^5.0.6
   flutter:
     sdk: flutter
@@ -35,6 +36,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  input_quantity: ^1.1.5
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +74,22 @@ flutter:
     - images/rekom3.jpg
     - images/rekom4.jpg
     - images/bg-profile.jpg
+    - images/niken.jpg
+    - images/jaring.jpg
+    - images/obat.png
+    - images/varietas.jpg
+    - images/pakan-ikan.jpg
+    - images/koi/asagi.png
+    - images/koi/chagoi.png
+    - images/koi/geromo.png
+    - images/koi/ki-utsuri.png
+    - images/koi/kumonryu.png
+    - images/koi/ochiba-shigure.png
+    - images/koi/ogon.png
+    - images/koi/shiro-utsuri.png
+    - images/koi/showa-sanshoku.png
+    - images/koi/shusui.png
+    - images/koi/tancho.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -9,6 +9,7 @@ import 'package:ternak_insang/pages/profilePage.dart';
 import 'package:ternak_insang/pages/signInPage.dart';
 import 'package:ternak_insang/pages/signupPage.dart';
 import 'package:ternak_insang/pages/salePage.dart';
+import 'package:ternak_insang/pages/cart.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ternak Insang',
-      home: SignIn()
+      home: signUp()
     );
   }
 }

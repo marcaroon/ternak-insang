@@ -1,7 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ternak_insang/pages/homePage.dart';
+import 'package:ternak_insang/navigation.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:ternak_insang/pages/loginPage.dart';
 
 class signUp extends StatelessWidget {
   const signUp({super.key});
@@ -10,7 +13,7 @@ class signUp extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -86,101 +89,170 @@ class signUp extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: const EdgeInsets.fromLTRB(1, 0, 0, 11),
+                        margin: const EdgeInsets.only(bottom: 12),
                         width: 275,
                         height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.black,
-                              offset: Offset(0, 4),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: const TextField(
+                        child: TextFormField(
+                          textAlign: TextAlign.center,
                           decoration: InputDecoration(
-                            disabledBorder:InputBorder.none,
-                            hintText: 'Full Name', 
-                          ),
-                        ),
-                        // child: const Center(
-                        //   child: Text(
-                        //     'Full Name',
-                        //     textAlign: TextAlign.center,
-                        //     style: TextStyle(
-                        //       fontFamily: 'Montserrat',
-                        //       fontSize: 17,
-                        //       fontWeight: FontWeight.w600,
-                        //       color: Color.fromRGBO(297, 297, 297, 100),
-                        //     ),
-                        //   ),
-                        // ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.fromLTRB(0, 0, 1, 11),
-                        width: 275,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.black,
-                              offset: Offset(0, 4),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'E-Mail',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
+                            hintText: 'Full Name',
+                            hintStyle: const TextStyle(
                               fontFamily: 'Montserrat',
-                              fontSize: 17,
+                              fontSize: 16,
                               fontWeight: FontWeight.w600,
                               color: Color.fromRGBO(297, 297, 297, 100),
                             ),
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide.none,
+                            )
                           ),
                         ),
                       ),
                       Container(
-                        margin: const EdgeInsets.fromLTRB(0, 0, 1, 31),
+                        margin: const EdgeInsets.only(bottom: 12),
                         width: 275,
                         height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.black,
-                              offset: Offset(0, 4),
-                              blurRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Password',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
+                        child: TextFormField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            hintText: 'E-Mail',
+                            hintStyle: const TextStyle(
                               fontFamily: 'Montserrat',
-                              fontSize: 17,
+                              fontSize: 16,
                               fontWeight: FontWeight.w600,
                               color: Color.fromRGBO(297, 297, 297, 100),
                             ),
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide.none,
+                            )
                           ),
                         ),
                       ),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 30),
+                        width: 275,
+                        height: 50,
+                        child: TextFormField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            hintText: 'Password',
+                            hintStyle: const TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Color.fromRGBO(297, 297, 297, 100),
+                            ),
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide.none,
+                            )
+                          ),
+                        ),
+                      ),
+                      // Container(
+                      //   margin: const EdgeInsets.fromLTRB(1, 0, 0, 11),
+                      //   width: 275,
+                      //   height: 50,
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.white,
+                      //     borderRadius: BorderRadius.circular(30),
+                      //     boxShadow: const [
+                      //       BoxShadow(
+                      //         color: Colors.black,
+                      //         offset: Offset(0, 4),
+                      //         blurRadius: 2,
+                      //       ),
+                      //     ],
+                      //   ),
+                      //   child: const TextField(
+                      //     decoration: InputDecoration(
+                      //       disabledBorder:InputBorder.none,
+                      //       hintText: 'Full Name', 
+                      //     ),
+                      //   ),
+                      //   child: const Center(
+                      //     child: Text(
+                      //       'Full Name',
+                      //       textAlign: TextAlign.center,
+                      //       style: TextStyle(
+                      //         fontFamily: 'Montserrat',
+                      //         fontSize: 17,
+                      //         fontWeight: FontWeight.w600,
+                      //         color: Color.fromRGBO(297, 297, 297, 100),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: const EdgeInsets.fromLTRB(0, 0, 1, 11),
+                      //   width: 275,
+                      //   height: 50,
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.white,
+                      //     borderRadius: BorderRadius.circular(30),
+                      //     boxShadow: const [
+                      //       BoxShadow(
+                      //         color: Colors.black,
+                      //         offset: Offset(0, 4),
+                      //         blurRadius: 2,
+                      //       ),
+                      //     ],
+                      //   ),
+                      //   child: const Center(
+                      //     child: Text(
+                      //       'E-Mail',
+                      //       textAlign: TextAlign.center,
+                      //       style: TextStyle(
+                      //         fontFamily: 'Montserrat',
+                      //         fontSize: 17,
+                      //         fontWeight: FontWeight.w600,
+                      //         color: Color.fromRGBO(297, 297, 297, 100),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: const EdgeInsets.fromLTRB(0, 0, 1, 31),
+                      //   width: 275,
+                      //   height: 50,
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.white,
+                      //     borderRadius: BorderRadius.circular(30),
+                      //     boxShadow: const [
+                      //       BoxShadow(
+                      //         color: Colors.black,
+                      //         offset: Offset(0, 4),
+                      //         blurRadius: 2,
+                      //       ),
+                      //     ],
+                      //   ),
+                      //   child: const Center(
+                      //     child: Text(
+                      //       'Password',
+                      //       textAlign: TextAlign.center,
+                      //       style: TextStyle(
+                      //         fontFamily: 'Montserrat',
+                      //         fontSize: 17,
+                      //         fontWeight: FontWeight.w600,
+                      //         color: Color.fromRGBO(297, 297, 297, 100),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       Container(
                         margin: const EdgeInsets.fromLTRB(0, 0, 1, 21),
                         child: TextButton(
                           onPressed: () {
                             Navigator.push(
-                              context, MaterialPageRoute(builder: (_) => Home()));
+                              context, MaterialPageRoute(builder: (_) => Navigation()));
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
@@ -215,35 +287,34 @@ class signUp extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        child: RichText(
-                          textAlign: TextAlign.center,
-                          text: const TextSpan(
-                            style: TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2175,
-                              color: Colors.white,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: 'Dont have an account? ',
-                              ),
-                              TextSpan(
-                                text: 'Sign up',
-                                style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2175,
-                                  decoration: TextDecoration.underline,
-                                  color: Colors.white,
-                                  decorationColor: Colors.white,
-                                ),
-                              ),
-                            ],
+                      RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
+                          style: const TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            height: 1.2175,
+                            color: Colors.white,
                           ),
+                          children: [
+                            const TextSpan(
+                              text: 'Already have an account? ',
+                            ),
+                            TextSpan(
+                              text: 'Sign In',
+                              style: const TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2175,
+                                decoration: TextDecoration.underline,
+                                color: Colors.white,
+                                decorationColor: Colors.white,
+                              ),
+                             recognizer: TapGestureRecognizer()..onTap = () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignIn()))
+                            ),
+                          ],
                         ),
                       ),
                     ]

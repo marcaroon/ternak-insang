@@ -26,13 +26,13 @@ class profile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const CircleAvatar(
-                        backgroundImage: AssetImage('images/ammar.jpg'),
+                        backgroundImage: AssetImage('images/niken.jpg'),
                         radius: 50,
                       ),
                       const Padding(
                         padding: EdgeInsets.only(top: 10),
                         child: Text(
-                          'Ammar',
+                          'Niken',
                           style: TextStyle(
                               color: oren,
                               fontFamily: 'Montserrat',
@@ -43,7 +43,7 @@ class profile extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(bottom: 7),
                         child: Text(
-                          'ammarqorni@gmail.com',
+                          'nikenlarasati@gmail.com',
                           style: TextStyle(
                               color: Color.fromRGBO(255, 255, 255, 1),
                               fontFamily: 'Montserrat',
@@ -156,19 +156,10 @@ class profile extends StatelessWidget {
               )
             ),
             const DefaultTabController(
-              length: 3,
+              length: 2,
               child: TabBar(
                 indicatorColor: oren,
                 tabs: <Widget>[
-                  Tab(
-                    child: Text('Favorit',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                      color: biru),
-                      ),
-                    ),
                   Tab(
                     child: Text('Alamat',
                     style: TextStyle(
@@ -188,7 +179,7 @@ class profile extends StatelessWidget {
                       ),
                   ),
               ],
-            )
+            ),
           ),
           // TabBarView(
           //   children: <Widget>[
@@ -202,12 +193,8 @@ class profile extends StatelessWidget {
           //       width: 200,
           //       color: Colors.yellow,
           //     ),
-          //     Container(
-          //       height: 200,
-          //       width: 200,
-          //       color: Colors.yellow,
-          //     ),
-          //   ])
+          //   ]
+          // )
         ],
       ),
     );
