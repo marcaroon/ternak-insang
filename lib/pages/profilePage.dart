@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ternak_insang/pages/editEdo.dart';
+import 'package:ternak_insang/pages/editProfile.dart';
 import 'package:ternak_insang/pages/homePage.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ternak_insang/pages/loginPage.dart';
 class profile extends StatelessWidget {
@@ -43,7 +42,7 @@ class profile extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 7),
                         child: Text(
-                        FirebaseAuth.instance.currentUser!.email ?? "Gada email e cok",
+                        FirebaseAuth.instance.currentUser!.email ?? "Gada email e",
                           style: const TextStyle(
                               color: Color.fromRGBO(255, 255, 255, 1),
                               fontFamily: 'SFPRO',
@@ -60,7 +59,7 @@ class profile extends StatelessWidget {
                               onPressed: () {
                                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => EditProfile()),
+                    MaterialPageRoute(builder: (context) => ProfileEdit()),
                   );
                               },
                               style: ElevatedButton.styleFrom(
@@ -68,7 +67,7 @@ class profile extends StatelessWidget {
                                 backgroundColor: Colors.white,
                               ),
                               child: const Text(
-                                'Edit Profile',
+                                'Ubah Profil',
                                 style: TextStyle(
                                     fontSize: 17,
                                     fontFamily: 'SFPRO',
@@ -145,7 +144,7 @@ class profile extends StatelessWidget {
                               backgroundColor: Colors.white,
                             ),
                             child: const Text(
-                              'Log Out',
+                              'Keluar',
                               style: TextStyle(
                                   fontSize: 17,
                                   fontFamily: 'SFPRO',

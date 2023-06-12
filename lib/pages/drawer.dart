@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ternak_insang/pages/aboutUs.dart';
 import 'package:ternak_insang/pages/addAddress.dart';
 import 'package:ternak_insang/pages/createProduct.dart';
 import 'package:ternak_insang/pages/homePage.dart';
@@ -26,8 +27,18 @@ class DrawerWidget extends StatelessWidget {
           children: <Widget>[
             headerDrawer(),
             listDrawer(
+                icon: Icons.person,
+                text: 'About Us',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AboutUs()),
+                  );
+                }
+              ),  
+            listDrawer(
               icon: Icons.post_add_rounded,
-              text: 'Post an Article',
+              text: 'Unggah Artikel',
               onTap: () {
                 Navigator.push(
                   context,
@@ -35,29 +46,29 @@ class DrawerWidget extends StatelessWidget {
                 );
               },
             ),
-            listDrawer(
-              icon: Icons.post_add,
-              text: 'Post a Product',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => createProduct()),
-                );
-              },
-            ),
-            listDrawer(
-              icon: Icons.post_add,
-              text: 'Add Address',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => createAddress()),
-                );
-              },
-            ),
+            // listDrawer(
+            //   icon: Icons.post_add,
+            //   text: 'Unggah Produk',
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => createProduct()),
+            //     );
+            //   },
+            // ),
+            // listDrawer(
+            //   icon: Icons.post_add,
+            //   text: 'Tambah Alamat',
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => createAddress()),
+            //     );
+            //   },
+            // ),
             listDrawer(
                 icon: Icons.shopping_cart,
-                text: 'Cart',
+                text: 'Keranjang',
                 onTap: () {
                   Navigator.push(
                     context,
@@ -77,11 +88,11 @@ class DrawerWidget extends StatelessWidget {
             // ),
             listDrawer(
                 icon: Icons.access_time,
-                text: 'Recently Viewed',
+                text: 'Terakhir Dilihat',
                 onTap: () => print('Tap Recent menu')),
             const Padding(
               padding: EdgeInsets.only(left: 20.0, top: 10, bottom: 10),
-              child: Text("Settings",
+              child: Text("Pengaturan",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 17,
@@ -90,7 +101,7 @@ class DrawerWidget extends StatelessWidget {
             ),
             listDrawer(
               icon: Icons.logout,
-              text: 'Log Out',
+              text: 'Keluar',
               onTap: () {
                 showDialog(
                     context: context,
@@ -174,7 +185,7 @@ Widget headerDrawer() {
           fontSize: 25, fontFamily: 'SFPRO', fontWeight: FontWeight.w700),
     ),
     accountEmail: Text(
-      FirebaseAuth.instance.currentUser!.email ?? "Gada email e cok",
+      FirebaseAuth.instance.currentUser!.email ?? "<empty email>>",
       style: const TextStyle(
           fontSize: 15, fontFamily: 'SFPRO', fontWeight: FontWeight.w500),
     ),

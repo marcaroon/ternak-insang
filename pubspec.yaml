@@ -76,7 +76,13 @@ flutter:
     - images/jaring.jpg
     - images/obat.png
     - images/varietas.jpg
+    - images/varietas-icon.png
+    - images/varietas-ikon.png
+    - images/obat-icon.png
+    - images/alat-icon.png
     - images/pakan-ikan.jpg
+    - images/ammar-photo.jpg
+    - images/niken-photo.jpg
     - images/koi/asagi.png
     - images/koi/chagoi.png
     - images/koi/geromo.png

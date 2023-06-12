@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ternak_insang/pages/addressPage.dart';
-import 'package:ternak_insang/pages/editEdo.dart';
 import 'package:ternak_insang/pages/editProfile.dart';
 import 'package:ternak_insang/pages/favoritePage.dart';
 import 'package:ternak_insang/pages/homePage.dart';
@@ -42,7 +41,7 @@ class Profile extends StatelessWidget {
                       children: [
                         Text(
                           FirebaseAuth.instance.currentUser!.displayName ??
-                              "Gada email e cok",
+                              "No Name",
                           style: const TextStyle(
                               fontFamily: 'SFPro',
                               fontSize: 30,
@@ -51,7 +50,7 @@ class Profile extends StatelessWidget {
                         ),
                         Text(
                           FirebaseAuth.instance.currentUser!.email ??
-                              "Gada email e cok",
+                              "<email empty>",
                           style: const TextStyle(
                               fontFamily: 'SFPro',
                               fontSize: 17,
@@ -78,7 +77,7 @@ class Profile extends StatelessWidget {
                                       side: BorderSide(color: oren)),
                                 ),
                                 child: const Text(
-                                  'Edit Profile',
+                                  'Ubah Profile',
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontFamily: 'SFPRO',
@@ -160,7 +159,7 @@ class Profile extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(15),
                                         side: BorderSide(color: oren))),
                                 child: const Text(
-                                  'Log Out',
+                                  'Keluar',
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontFamily: 'SFPRO',

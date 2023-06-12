@@ -137,6 +137,7 @@ class _SignInState extends State<SignIn> {
                           // height: 60,
                          padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
                           child: TextFormField(
+                            obscureText: true,
                             controller: passwordController,
                             validator: validatePassword,
                             textAlign: TextAlign.center,

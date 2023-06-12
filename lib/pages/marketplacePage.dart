@@ -55,14 +55,15 @@ class marketplace extends StatelessWidget {
                   width: 300,
                   height: 40,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(15),
                     color: Colors.white,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(bottom: 0),
+                    padding: EdgeInsets.only(top: 15),
                     child: TextFormField(
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.start,
                       decoration: InputDecoration(
+                        hintText: 'Cari',
                         hintStyle: const TextStyle(
                           fontFamily: 'SFPRO',
                           fontSize: 18,
@@ -79,12 +80,15 @@ class marketplace extends StatelessWidget {
                     ),
                   ),
                 ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
-                  },
-                  icon: const Icon(Icons.trolley),
-                  iconSize: 30,)
+                Container(
+                  margin: EdgeInsets.only(left: 10),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+                    },
+                    icon: const Icon(Icons.trolley),
+                    iconSize: 30,),
+                )
                 // InkWell(
                 //     child: Container(
                 //       margin: const EdgeInsets.only(left: 20),
@@ -139,7 +143,7 @@ class marketplace extends StatelessWidget {
                               child: const Padding(
                                 padding: EdgeInsets.fromLTRB(10, 7, 10, 10),
                                 child: Text(
-                                  'Contoh headline yang ada di marketplace, ini contoh panjangnya',
+                                  'Ikan Koi Jadi Simbol Budaya di Jepang, Apa Boleh Dimakan?',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontFamily: 'SFPRO',
@@ -171,7 +175,7 @@ class marketplace extends StatelessWidget {
                               child: const Padding(
                                 padding: EdgeInsets.fromLTRB(10, 7, 10, 10),
                                 child: Text(
-                                  'Contoh headline yang ada di marketplace, ini contoh panjangnya',
+                                  'Terpapar Virus Berbahaya, Lebih dari 1.000 Ikan Koi Asal Jepang Dimusnahkan',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontFamily: 'SFPRO',

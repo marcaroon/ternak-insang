@@ -37,6 +37,7 @@ class ListAddress extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Address_Kotak(),
                 // AddressBuilder(),
                 InkWell(
                     child: Container(
@@ -72,6 +73,56 @@ class ListAddress extends StatelessWidget {
               ],
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Address_Kotak extends StatelessWidget {
+  const Address_Kotak({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // final dataAddress = Provider.of<Address>(context);
+    return InkWell(
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 10),
+        width: double.infinity,
+        height: 90,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: oren)),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(15, 10, 10, 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Niken Larasati",
+                style: const TextStyle(
+                    fontFamily: 'SFPro',
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600),
+              ),
+              Text(
+                "082111633004",
+                style: const TextStyle(
+                    fontFamily: 'SFPro',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500),
+              ),
+              Text(
+                "Kota Madiun",
+                style: const TextStyle(
+                    fontFamily: 'SFPro',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
         ),
       ),
     );

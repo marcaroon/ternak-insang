@@ -158,6 +158,7 @@ class _signUpState extends State<signUp> {
                           // height: 50,
                           padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
                           child: TextFormField(
+                            obscureText: true,
                             controller: passwordController,
                             textAlign: TextAlign.center,
                             decoration: InputDecoration(

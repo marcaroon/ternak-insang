@@ -33,6 +33,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         // centerTitle: true,
         iconTheme: IconThemeData(color: biru, size: 30, weight: 30),
         toolbarHeight: 100,
@@ -187,7 +188,7 @@ class Home extends StatelessWidget {
                                               topLeft: Radius.circular(10),
                                               topRight: Radius.circular(10)),
                                           child: Image.asset(
-                                            'images/varietas.jpg',
+                                            'images/varietas-ikon.png',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -223,7 +224,7 @@ class Home extends StatelessWidget {
                                               topLeft: Radius.circular(10),
                                               topRight: Radius.circular(10)),
                                           child: Image.asset(
-                                            'images/jaring.jpg',
+                                            'images/alat-icon.png',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -253,13 +254,14 @@ class Home extends StatelessWidget {
                                     children: [
                                       Container(
                                         margin: EdgeInsets.only(bottom: 7),
+                                        padding: EdgeInsets.all(5),
                                         height: 70,
                                         child: ClipRRect(
                                           borderRadius: const BorderRadius.only(
                                               topLeft: Radius.circular(10),
                                               topRight: Radius.circular(10)),
                                           child: Image.asset(
-                                            'images/pakan-ikan.jpg',
+                                            'images/varietas-icon.png',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -295,7 +297,7 @@ class Home extends StatelessWidget {
                                               topLeft: Radius.circular(10),
                                               topRight: Radius.circular(10)),
                                           child: Image.asset(
-                                            'images/obat.png',
+                                            'images/obat-icon.png',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
