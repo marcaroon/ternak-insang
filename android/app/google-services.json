@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "354004286834",
+    "project_id": "ternak-insang",
+    "storage_bucket": "ternak-insang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354004286834:android:97360b8ce17d882848b1eb",
+        "android_client_info": {
+          "package_name": "com.example.ternak_insang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354004286834-2npf17p67vga8eidaisrr0u5cm4ubgce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0q9duSmwn9IMp0OrjUtiv3xfRtBC9JVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354004286834-2npf17p67vga8eidaisrr0u5cm4ubgce.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

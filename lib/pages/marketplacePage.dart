@@ -1,25 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:provider/provider.dart';
 import 'package:ternak_insang/object.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:ternak_insang/pages/salePage.dart';
 import 'package:ternak_insang/pages/cart.dart';
+import 'package:ternak_insang/widgets/menu_sale.dart';
+import 'package:ternak_insang/widgets/productBuilder.dart';
+
+import '../providers/products.dart';
 
 class marketplace extends StatelessWidget {
   const marketplace({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dataProduct = Provider.of<Products>(context).productItem;
+    final dataMainProduct = dataProduct;
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
           toolbarHeight: 80,
           backgroundColor: biru,
           title: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(0),
             child: Row(
               children: [
+                // Container(
+                //         margin: const EdgeInsets.only(bottom: 12),
+                //         width: 275,
+                //         height: 50,
+                //         child: TextFormField(
+                //           textAlign: TextAlign.center,
+                //           decoration: InputDecoration(
+                //             hintText: 'Search',
+                //             hintStyle: const TextStyle(
+                //               fontFamily: 'SFPRO',
+                //               fontSize: 16,
+                //               fontWeight: FontWeight.w600,
+                //               color: Color.fromRGBO(297, 297, 297, 100),
+                //             ),
+                //             fillColor: Colors.white,
+                //             filled: true,
+                //             border: OutlineInputBorder(
+                //               borderRadius: BorderRadius.circular(25),
+                //               borderSide: BorderSide.none,
+                //             )
+                //           ),
+                //         ),
+                //       ),
                 Container(
                   margin: EdgeInsets.only(right: 15),
                   width: 300,
@@ -28,15 +58,24 @@ class marketplace extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.white,
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.fromLTRB(25, 9, 0, 10),
-                    child: Text(
-                      'Search',
-                      style: TextStyle(
-                          color: Color.fromRGBO(297, 297, 297, 100),
-                          fontFamily: 'Montserrat',
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 0),
+                    child: TextFormField(
+                      textAlign: TextAlign.center,
+                      decoration: InputDecoration(
+                        hintStyle: const TextStyle(
+                          fontFamily: 'SFPRO',
                           fontSize: 18,
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w600,
+                          color: Color.fromRGBO(297, 297, 297, 100),
+                          ),
+                        fillColor: Colors.white,
+                        filled: true,
+                        border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
+                        borderSide: BorderSide.none,
+                        )
+                      ),
                     ),
                   ),
                 ),
@@ -102,8 +141,8 @@ class marketplace extends StatelessWidget {
                                 child: Text(
                                   'Contoh headline yang ada di marketplace, ini contoh panjangnya',
                                   style: TextStyle(
-                                    fontSize: 13,
-                                    fontFamily: 'Montserrat',
+                                    fontSize: 15,
+                                    fontFamily: 'SFPRO',
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white,
                                   ),
@@ -134,8 +173,8 @@ class marketplace extends StatelessWidget {
                                 child: Text(
                                   'Contoh headline yang ada di marketplace, ini contoh panjangnya',
                                   style: TextStyle(
-                                    fontSize: 13,
-                                    fontFamily: 'Montserrat',
+                                    fontSize: 15,
+                                    fontFamily: 'SFPRO',
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white,
                                   ),
@@ -166,8 +205,8 @@ class marketplace extends StatelessWidget {
                                 child: Text(
                                   'Contoh headline yang ada di marketplace, ini contoh panjangnya',
                                   style: TextStyle(
-                                    fontSize: 13,
-                                    fontFamily: 'Montserrat',
+                                    fontSize: 15,
+                                    fontFamily: 'SFPRO',
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white,
                                   ),
@@ -198,8 +237,8 @@ class marketplace extends StatelessWidget {
                                 child: Text(
                                   'Contoh headline yang ada di marketplace, ini contoh panjangnya',
                                   style: TextStyle(
-                                    fontSize: 13,
-                                    fontFamily: 'Montserrat',
+                                    fontSize: 15,
+                                    fontFamily: 'SFPRO',
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white,
                                   ),
@@ -212,51 +251,10 @@ class marketplace extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: double.infinity,
-                    height: 140,
-                    color: biru,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                          child: Text(
-                            'Categories',
-                            style: TextStyle(
-                                fontFamily: 'Montserrat',
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Flexible(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                Row(
-                                  children: const [
-                                    isiCategories(),
-                                    isiCategories(),
-                                    isiCategories(),
-                                    isiCategories(),
-                                    isiCategories(),
-                                    isiCategories(),
-                                    isiCategories(),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
                     height: 50,
+                    margin: EdgeInsets.only(bottom: 5, top: 5),
                     width: double.infinity,
-                    color: Colors.blue[50],
+                    color: Colors.white,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -271,70 +269,11 @@ class marketplace extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(7, 10, 7, 10),
-                    padding: const EdgeInsets.fromLTRB(12, 5, 12, 5),
-                    width: double.infinity,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        color: biru, borderRadius: BorderRadius.circular(10)),
-                    child: const Text(
-                      'You may like',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        Sale(image: koi1, text: namaKoi1),
-                        Sale(image: koi2, text: namaKoi2),
-                        Sale(image: koi3, text: namaKoi3),
-                        Sale(image: koi4, text: namaKoi4),
-                        Sale(image: koi5, text: namaKoi5),
-                        Sale(image: koi6, text: namaKoi6),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(7, 10, 7, 10),
-                    padding: const EdgeInsets.fromLTRB(12, 5, 12, 5),
-                    width: double.infinity,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        color: biru, borderRadius: BorderRadius.circular(10)),
-                    child: const Text(
-                      'Koi Sales',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        Sale(image: koi7, text: namaKoi7),
-                        Sale(image: koi8, text: namaKoi8),
-                        Sale(image: koi9, text: namaKoi9),
-                        Sale(image: koi10, text: namaKoi10),
-                        Sale(image: koi11, text: namaKoi11),
-                      ],
-                    ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: SizedBox(
+                      height: 1000,
+                      child: ProductBuilder(dataProductMain: dataMainProduct)),
                   ),
                 ],
               ))
@@ -366,56 +305,20 @@ class bawahCategories extends StatelessWidget {
               child: Text(
                 text,
                 style: const TextStyle(
-                    fontSize: 13,
-                    fontFamily: 'Montserrat',
+                    fontSize: 14,
+                    fontFamily: 'SFPRO',
                     fontWeight: FontWeight.w600),
               ),
             ),
           ),
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const Sales()));
+            // Navigator.push(context,
+            //     MaterialPageRoute(builder: (context) => Sales()));
           }),
     );
   }
 }
 
-class isiCategories extends StatelessWidget {
-  const isiCategories({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 10),
-      height: 85,
-      width: 70,
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(5)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            height: 45,
-            margin: const EdgeInsets.fromLTRB(10, 10, 10, 7),
-            child: ClipRRect(
-              child: Image.asset('images/pakanikan.png'),
-            ),
-          ),
-          const Text(
-            'Pakan Ikan',
-            style: TextStyle(
-                fontSize: 10,
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w700,
-                color: oren),
-          )
-        ],
-      ),
-    );
-  }
-}
 
 String horList1 = "Terlaris";
 String horList2 = "Terbaru";

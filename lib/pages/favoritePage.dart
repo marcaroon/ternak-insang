@@ -21,7 +21,7 @@ class Favorite extends StatelessWidget {
           'Favorite',
           style: TextStyle(
               fontSize: 20,
-              fontFamily: 'Montserrat',
+              fontFamily: 'SFPRO',
               fontWeight: FontWeight.w700,
               color: biru),
         ),
@@ -44,7 +44,7 @@ class Favorite extends StatelessWidget {
                       child: Text(
                         'Toko',
                         style: TextStyle(
-                            fontFamily: 'Montserrat',
+                            fontFamily: 'SFPRO',
                             fontSize: 18,
                             fontWeight: FontWeight.w600),
                       ),
@@ -73,7 +73,7 @@ class Favorite extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: favoriteQueryHeight * 0.405,
+              height: favoriteQueryHeight * 0.40,
               child: Column(
                 children: [
                   Container(
@@ -86,7 +86,7 @@ class Favorite extends StatelessWidget {
                       child: Text(
                         'Artikel',
                         style: TextStyle(
-                            fontFamily: 'Montserrat',
+                            fontFamily: 'SFPRO',
                             fontSize: 18,
                             fontWeight: FontWeight.w600),
                       ),
@@ -94,15 +94,14 @@ class Favorite extends StatelessWidget {
                   ),
                   Flexible(
                     child: Padding(
-                      padding: EdgeInsets.only(top: 10, bottom: 10),
+                      padding: EdgeInsets.only(top: 5, bottom: 10),
                       child: ListView(
                         children: [
-                          ListArtikel(),
-                          ListArtikel(),
-                          ListArtikel(),
-                          ListArtikel(),
-                          ListArtikel(),
-                          ListArtikel(),
+                          listArtikel(image: rekom1, text: title1, subtext: under1,),
+                          listArtikel(image: rekom2, text: title2, subtext: under2,),
+                          listArtikel(image: rekom3, text: title3, subtext: under3,),
+                          listArtikel(image: rekom4, text: title4, subtext: under4,),
+                          listArtikel(image: rekom1, text: title1, subtext: under1,),
                         ],
                       ),
                     ),
@@ -139,14 +138,14 @@ class ListArtikel extends StatelessWidget {
       title: const Text(
         'Nama artikel yang di sukai',
         style: TextStyle(
-          fontFamily: 'Montserrat',
+          fontFamily: 'SFPRO',
           fontSize: 16,
           fontWeight: FontWeight.w600),
         ),
       subtitle: const Text(
         'Isi ringkasan dari nama artikel yang disimpan dan yang disukai oleh user',
         style: TextStyle(
-          fontFamily: 'Montserrat',
+          fontFamily: 'SFPRO',
           fontSize: 12,
           fontWeight: FontWeight.w600),
       ),
@@ -180,15 +179,57 @@ class ListToko extends StatelessWidget {
       title: Text(
         text,
         style: const TextStyle(
-            fontFamily: 'Montserrat',
+            fontFamily: 'SFPRO',
             fontSize: 16,
             fontWeight: FontWeight.w600),
       ),
       subtitle: const Text(
         'Rp. 350.000',
         style: TextStyle(
-            fontFamily: 'Montserrat',
+            fontFamily: 'SFPRO',
             fontSize: 12,
+            fontWeight: FontWeight.w600),
+      ),
+    );
+  }
+}
+
+class listArtikel extends StatelessWidget {
+  final String image, text, subtext;
+
+  const listArtikel({
+    required this.image,
+    required this.text,
+    required this.subtext,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: SizedBox(
+        height: double.infinity,
+        width: 75,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image.asset(
+            image,
+            fit: BoxFit.fill,
+          ),
+        ),
+      ),
+      title: Text(
+        text,
+        style: const TextStyle(
+            fontFamily: 'SFPRO',
+            fontSize: 14,
+            fontWeight: FontWeight.w600),
+      ),
+      subtitle: Text(
+        subtext,
+        style: TextStyle(
+            fontFamily: 'SFPRO',
+            fontSize: 10,
             fontWeight: FontWeight.w600),
       ),
     );

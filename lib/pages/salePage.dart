@@ -4,7 +4,12 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 
 class Sales extends StatelessWidget {
-  const Sales({super.key});
+  String title;
+  String description;
+  double price;
+  String imageUrl;
+
+  Sales(this.title, this.description, this.imageUrl, this.price, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +23,7 @@ class Sales extends StatelessWidget {
               SizedBox(
                 height: 300,
                 width: double.infinity,
-                child: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ojiya_Nishikigoi_no_Sato_ac_%283%29.jpg/300px-Ojiya_Nishikigoi_no_Sato_ac_%283%29.jpg',
-                fit: BoxFit.cover),
+                child: Image(image: NetworkImage(imageUrl)),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
@@ -28,37 +32,44 @@ class Sales extends StatelessWidget {
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
-                          'Koi Utsuri',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                            color: biru
-                          ),
+                          title,
+                          style: const TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700,
+                              color: biru),
                         ),
                         Text(
-                          'Rp. 350.000',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: oren
-                          ),
+                          price.toString(),
+                          style: const TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              color: oren),
                         )
                       ],
                     ),
                     InkWell(
-                      child: const Icon(
-                        Icons.favorite_border,
-                        size: 40),
-                      onTap: (){},
+                      child: const Icon(Icons.favorite_border, size: 40),
+                      onTap: () {},
                     )
                   ],
                 ),
               ),
-              
+              Padding(
+                padding: const EdgeInsets.only(right: 15, left: 15, top: 10),
+                child: Text(
+                description,
+                textAlign: TextAlign.justify,
+                style: const TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600
+                  ),  
+                ),
+              )
             ],
           ),
         ],

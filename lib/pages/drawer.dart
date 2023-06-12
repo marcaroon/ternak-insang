@@ -1,17 +1,24 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ternak_insang/pages/addAddress.dart';
+import 'package:ternak_insang/pages/createProduct.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:ternak_insang/pages/cart.dart';
 import 'package:ternak_insang/pages/loginPage.dart';
 import 'package:ternak_insang/pages/profilePage.dart';
-import 'package:ternak_insang/pages/signInPage.dart';
+
+import '../providers/auth.dart';
+import 'createArticle.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final authservice = Provider.of<AuthService>(context);
     return Container(
-      decoration: BoxDecoration(color: biru),
+      decoration: const BoxDecoration(color: biru),
       child: Drawer(
         backgroundColor: Colors.transparent,
         child: ListView(
@@ -19,12 +26,32 @@ class DrawerWidget extends StatelessWidget {
           children: <Widget>[
             headerDrawer(),
             listDrawer(
-              icon: Icons.person,
-              text: 'Profile',
+              icon: Icons.post_add_rounded,
+              text: 'Post an Article',
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const profile()),
+                  MaterialPageRoute(builder: (context) => createArticle()),
+                );
+              },
+            ),
+            listDrawer(
+              icon: Icons.post_add,
+              text: 'Post a Product',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => createProduct()),
+                );
+              },
+            ),
+            listDrawer(
+              icon: Icons.post_add,
+              text: 'Add Address',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => createAddress()),
                 );
               },
             ),
@@ -36,7 +63,18 @@ class DrawerWidget extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => Cart()),
                   );
-                }),
+                }
+              ),
+            // listDrawer(
+            //   icon: Icons.post_add,
+            //   text: 'Add Product',
+            //   onTap: (){
+            //      Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => addProduct()),
+            //     );
+            //   }
+            // ),
             listDrawer(
                 icon: Icons.access_time,
                 text: 'Recently Viewed',
@@ -46,7 +84,7 @@ class DrawerWidget extends StatelessWidget {
               child: Text("Settings",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 15,
+                    fontSize: 17,
                     color: Colors.white,
                   )),
             ),
@@ -65,16 +103,16 @@ class DrawerWidget extends StatelessWidget {
                         title: const Text(
                           'Log Out',
                           style: TextStyle(
-                              fontSize: 20,
-                              fontFamily: 'Montserrat',
+                              fontSize: 25,
+                              fontFamily: 'SFPRO',
                               fontWeight: FontWeight.w600,
                               color: biru),
                         ),
                         content: const Text(
                           'Are you sure want to log out?',
                           style: TextStyle(
-                              fontSize: 15,
-                              fontFamily: 'Montserrat',
+                              fontSize: 17,
+                              fontFamily: 'SFPRO',
                               fontWeight: FontWeight.w500,
                               color: biru),
                         ),
@@ -86,34 +124,31 @@ class DrawerWidget extends StatelessWidget {
                             child: const Text(
                               'Cancel',
                               style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: 'Montserrat',
+                                  fontSize: 17,
+                                  fontFamily: 'SFPRO',
                                   fontWeight: FontWeight.w600,
                                   color: oren),
                             ),
                           ),
                           TextButton(
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .popUntil((route) => route.isFirst);
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (BuildContext context) =>
-                                          SignIn()));
-                            },
+                            onPressed: () async {
+                              await authservice.signOut();
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => SignIn()));
+                              },
                             child: const Text(
                               'Confirm',
                               style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: 'Montserrat',
+                                  fontSize: 17,
+                                  fontFamily: 'SFPRO',
                                   fontWeight: FontWeight.w600,
                                   color: oren),
                             ),
                           ),
                         ],
                       );
-                    });
+                    }
+                  );
               },
             ),
           ],
@@ -124,22 +159,24 @@ class DrawerWidget extends StatelessWidget {
 }
 
 Widget headerDrawer() {
-  return const UserAccountsDrawerHeader(
+  return UserAccountsDrawerHeader(
+    decoration: const BoxDecoration(color: biru),
     currentAccountPicture: ClipOval(
       child: Image(
-        image: AssetImage('images/ammar.jpg'),
+        image: NetworkImage(FirebaseAuth.instance.currentUser!.photoURL ??
+              'https://th.bing.com/th/id/OIP.DGePcjJ-RdJr7oivIaPxGgHaHa?w=217&h=217&c=7&r=0&o=5&dpr=1.3&pid=1.7'),
         fit: BoxFit.cover,
       ),
     ),
     accountName: Text(
-      'Ammar',
-      style: TextStyle(
-          fontSize: 25, fontFamily: 'Montserrat', fontWeight: FontWeight.w700),
+      FirebaseAuth.instance.currentUser!.displayName ?? "No Name",
+      style: const TextStyle(
+          fontSize: 25, fontFamily: 'SFPRO', fontWeight: FontWeight.w700),
     ),
     accountEmail: Text(
-      'ammarqorni@gmail.com',
-      style: TextStyle(
-          fontSize: 10, fontFamily: 'Montserrat', fontWeight: FontWeight.w500),
+      FirebaseAuth.instance.currentUser!.email ?? "Gada email e cok",
+      style: const TextStyle(
+          fontSize: 15, fontFamily: 'SFPRO', fontWeight: FontWeight.w500),
     ),
   );
 }
@@ -160,10 +197,10 @@ Widget listDrawer(
           child: Text(
             text,
             style: TextStyle(
-              fontSize: 14,
-              fontFamily: 'Montserrat',
+              fontSize: 17,
+              fontFamily: 'SFPRO',
               color: Colors.white,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),

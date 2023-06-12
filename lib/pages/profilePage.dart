@@ -1,10 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ternak_insang/pages/editEdo.dart';
 import 'package:ternak_insang/pages/homePage.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ternak_insang/pages/loginPage.dart';
-import 'package:ternak_insang/pages/signInPage.dart';
-
 class profile extends StatelessWidget {
   const profile({super.key});
 
@@ -14,7 +14,7 @@ class profile extends StatelessWidget {
       body: Column(
         children: [
           Container(
-              height: 300,
+              height: 400,
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: biru,
@@ -25,29 +25,29 @@ class profile extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const CircleAvatar(
-                        backgroundImage: AssetImage('images/niken.jpg'),
-                        radius: 50,
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(FirebaseAuth.instance.currentUser!.photoURL ?? 'https://th.bing.com/th/id/OIP.DGePcjJ-RdJr7oivIaPxGgHaHa?w=217&h=217&c=7&r=0&o=5&dpr=1.3&pid=1.7'),
+                        radius: 80,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
                         child: Text(
-                          'Niken',
-                          style: TextStyle(
+                          FirebaseAuth.instance.currentUser!.displayName ?? "No Name",
+                          style: const TextStyle(
                               color: oren,
-                              fontFamily: 'Montserrat',
-                              fontSize: 27,
+                              fontFamily: 'SFPRO',
+                              fontSize: 35,
                               fontWeight: FontWeight.w700),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(bottom: 7),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 7),
                         child: Text(
-                          'nikenlarasati@gmail.com',
-                          style: TextStyle(
+                        FirebaseAuth.instance.currentUser!.email ?? "Gada email e cok",
+                          style: const TextStyle(
                               color: Color.fromRGBO(255, 255, 255, 1),
-                              fontFamily: 'Montserrat',
-                              fontSize: 12,
+                              fontFamily: 'SFPRO',
+                              fontSize: 17,
                               fontWeight: FontWeight.w500),
                         ),
                       ),
@@ -57,7 +57,12 @@ class profile extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EditProfile()),
+                  );
+                              },
                               style: ElevatedButton.styleFrom(
                                 shadowColor: Colors.black,
                                 backgroundColor: Colors.white,
@@ -65,8 +70,8 @@ class profile extends StatelessWidget {
                               child: const Text(
                                 'Edit Profile',
                                 style: TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: 'Montserrat',
+                                    fontSize: 17,
+                                    fontFamily: 'SFPRO',
                                     fontWeight: FontWeight.w600,
                                     color: biru),
                               ),
@@ -85,16 +90,16 @@ class profile extends StatelessWidget {
                                       title: const Text(
                                         'Log Out',
                                         style: TextStyle(
-                                            fontSize: 20,
-                                            fontFamily: 'Montserrat',
+                                            fontSize: 25,
+                                            fontFamily: 'SFPRO',
                                             fontWeight: FontWeight.w600,
                                             color: biru),
                                       ),
                                       content: const Text(
                                         'Are you sure want to log out?',
                                         style: TextStyle(
-                                            fontSize: 15,
-                                            fontFamily: 'Montserrat',
+                                            fontSize: 17,
+                                            fontFamily: 'SFPRO',
                                             fontWeight: FontWeight.w500,
                                             color: biru),
                                       ),
@@ -106,8 +111,8 @@ class profile extends StatelessWidget {
                                           child: const Text(
                                             'Cancel',
                                             style: TextStyle(
-                                                fontSize: 12,
-                                                fontFamily: 'Montserrat',
+                                                fontSize: 17,
+                                                fontFamily: 'SFPRO',
                                                 fontWeight: FontWeight.w600,
                                                 color: oren),
                                           ),
@@ -126,8 +131,8 @@ class profile extends StatelessWidget {
                                           child: const Text(
                                             'Confirm',
                                             style: TextStyle(
-                                                fontSize: 12,
-                                                fontFamily: 'Montserrat',
+                                                fontSize: 17,
+                                                fontFamily: 'SFPRO',
                                                 fontWeight: FontWeight.w600,
                                                 color: oren),
                                           ),
@@ -142,8 +147,8 @@ class profile extends StatelessWidget {
                             child: const Text(
                               'Log Out',
                               style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: 'Montserrat',
+                                  fontSize: 17,
+                                  fontFamily: 'SFPRO',
                                   fontWeight: FontWeight.w600,
                                   color: biru),
                             ),
@@ -163,8 +168,8 @@ class profile extends StatelessWidget {
                   Tab(
                     child: Text('Alamat',
                     style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: 'Montserrat',
+                      fontSize: 17,
+                      fontFamily: 'SFPRO',
                       fontWeight: FontWeight.w600,
                       color: biru),
                       ),
@@ -172,8 +177,8 @@ class profile extends StatelessWidget {
                   Tab(
                     child: Text('Riwayat',
                     style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: 'Montserrat',
+                      fontSize: 17,
+                      fontFamily: 'SFPRO',
                       fontWeight: FontWeight.w600,
                       color: biru),
                       ),
@@ -181,6 +186,28 @@ class profile extends StatelessWidget {
               ],
             ),
           ),
+          // TabBarView(children: [
+          //   Container(
+          //     height: 30,
+          //     width: 10,
+          //     child: Text(
+          //       'halo nama saya ammar'
+          //     ),
+          //     decoration: BoxDecoration(
+          //       color: Colors.black
+          //     ),
+          //   ),
+          //   Container(
+          //     height: 30,
+          //     width: 10,
+          //     child: Text(
+          //       'halo nama saya saya'
+          //     ),
+          //     decoration: BoxDecoration(
+          //       color: Colors.black
+          //     ),
+          //   )
+          // ])
           // TabBarView(
           //   children: <Widget>[
           //     Container(
